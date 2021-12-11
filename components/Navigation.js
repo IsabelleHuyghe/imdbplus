@@ -2,21 +2,25 @@ import styles from "../styles/Navigation.module.scss"
 import Image from "next/image"
 
 const Navigation = ({ locale, locales }) => {
-  const resolveMovies = {
-    en: 'Movies',
-    nl: 'Films',
+  const resolveGroups = {
+    en: 'Groups',
+    nl: 'Muziekgroepen',
   }
-  const resolvePeople = {
-    en: 'People',
-    nl: 'Mensen',
+  const resolveMembers = {
+    en: 'Members',
+    nl: 'Leden',
   }
-  const resolveNews = {
-    en: 'News',
-    nl: 'Nieuws',
+  const resolveHistory = {
+    en: 'History',
+    nl: 'Geschiedenis',
   }
-  const resolveMerchandise = {
-    en: 'Shop',
-    nl: 'Winkel',
+  const resolveEvents = {
+    en: 'Events',
+    nl: 'Evenementen',
+  }
+  const resolveAlbums = {
+    en: 'Albums',
+    nl: 'Albums',
   }
   let homeurl = "/";
   if (locale != 'default') {
@@ -41,16 +45,19 @@ const Navigation = ({ locale, locales }) => {
         <div className={styles.navlinkswrapper}>
           <div className={styles.navlinks}>
             <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/movies`} className={styles.movie}>{resolveMovies[locale]}</a>
+              <a href={`${defaultLocale}pages/groups`} className={styles.movie}>{resolveGroups[locale]}</a>
             </div>
             <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/people`} className={styles.personality}>{resolvePeople[locale]}</a>
+              <a href={`${defaultLocale}pages/members`} className={styles.personality}>{resolveMembers[locale]}</a>
             </div>
             <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/news`} className={styles.newsitem}>{resolveNews[locale]}</a>
+              <a href={`${defaultLocale}pages/history`} className={styles.newsitem}>{resolveHistory[locale]}</a>
             </div>
             <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/shop`} className={styles.product}>{resolveMerchandise[locale]}</a>
+              <a href={`${defaultLocale}pages/events`} className={styles.product}>{resolveEvents[locale]}</a>
+            </div>
+            <div className={styles.navlink}>
+              <a href={`${defaultLocale}pages/albums`} className={styles.product}>{resolveAlbums[locale]}</a>
             </div>
           </div>
           <div className={styles.navlocales}>
