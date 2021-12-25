@@ -14,14 +14,7 @@ const Navigation = ({ locale, locales }) => {
     en: 'History',
     nl: 'Geschiedenis',
   }
-  const resolveEvents = {
-    en: 'Events',
-    nl: 'Evenementen',
-  }
-  const resolveAlbums = {
-    en: 'Albums',
-    nl: 'Albums',
-  }
+
   let homeurl = "/";
   if (locale != 'default') {
     homeurl = "/" + locale;
@@ -34,12 +27,7 @@ const Navigation = ({ locale, locales }) => {
 
         <div className={styles.navlogo}>
           <a href={homeurl}>
-            {/* <img
-              src="https://a.storyblok.com/f/133261/3039x582/a60d166ec2/logo-colored-full.png/m/200x0"
-              alt="IMDBPlus Logo"
-              className=""
-            /> */}
-            <Image src="/logo-colored-full.png" alt="IMDBPlus Logo" width="128" height="25" />
+            FansForBands
           </a>
         </div>
         <div className={styles.navlinkswrapper}>
@@ -52,12 +40,6 @@ const Navigation = ({ locale, locales }) => {
             </div>
             <div className={styles.navlink}>
               <a href={`${defaultLocale}pages/history`} className={styles.newsitem}>{resolveHistory[locale]}</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/events`} className={styles.product}>{resolveEvents[locale]}</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/albums`} className={styles.product}>{resolveAlbums[locale]}</a>
             </div>
           </div>
           <div className={styles.navlocales}>

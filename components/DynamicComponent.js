@@ -15,7 +15,7 @@ import Country from './Country'
 import NewsItem from './NewsItem'
 import FrontpageSlideshow from './FrontpageSlideshow'
 import Intro from './Intro'
-import MovieList from './MovieList'
+import GroupList from './GroupList'
 import NewsItemList from './NewsItemList'
 import PersonalityList from './PersonalityList'
 import ProductList from './ProductList'
@@ -42,7 +42,7 @@ const Components = {
   'newsitem': NewsItem,
   'frontpageslideshow':FrontpageSlideshow,
   'intro':Intro,
-  'movielist':MovieList,
+  'grouplist':GroupList,
   'newsitemlist':NewsItemList,
   'productlist':ProductList,
   'productcategory':Placeholder,

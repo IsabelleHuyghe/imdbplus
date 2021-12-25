@@ -33,7 +33,7 @@ const resolveNews = {
   nl: 'Nieuws',
 }
 
-const Movie = ({ data, level }) => {
+const Group = ({ data, level }) => {
   var locale = 'en';
   //enriching data
   if (level === 'data') {
@@ -59,7 +59,7 @@ const Movie = ({ data, level }) => {
   }
 
   const [products, setProducts] = useState([]);
-  getData(data.story.uuid, locale, content.preview = false, 'product', 'movies').then(
+  getData(data.story.uuid, locale, content.preview = false, 'product', 'Group').then(
     function (result) {
       setProducts(result.data.stories);
     });
@@ -81,40 +81,40 @@ const Movie = ({ data, level }) => {
           <h1 className={styles.title}>
             {content.title}
           </h1>
-          <div className={styles.genrelist}>
-            {genres.map((item, index) => (
-              <div className={styles.genre}>
-                {item.content.title}
-              </div>
-            ))}
-          </div>
-          <div className={styles.mainpicture} style={{ backgroundImage: `url("${content.mainpicture.filename}")` }}>
-          </div>
-          <div className={styles.imagegallery}>
-            <InPageSlideshow pictures={pictures}></InPageSlideshow>
-          </div>  
+          {/*<div className={styles.genrelist}>*/}
+          {/*  {genres.map((item, index) => (*/}
+          {/*    <div className={styles.genre}>*/}
+          {/*      {item.content.title}*/}
+          {/*    </div>*/}
+          {/*  ))}*/}
+          {/*</div>*/}
+          {/*<div className={styles.mainpicture} style={{ backgroundImage: `url("${content.mainpicture.filename}")` }}>*/}
+          {/*</div>*/}
+          {/*<div className={styles.imagegallery}>*/}
+          {/*  <InPageSlideshow pictures={pictures}></InPageSlideshow>*/}
+          {/*</div>  */}
 
-          <div className={styles.short}>
-            {render(content.short)}
-          </div>
-          <div className={styles.synopsis}>
-            {render(content.synopsis)}
-          </div>
-          <div className={styles.peoplesegment}>
-            <div className={styles.content}>
-              {directors && directors.length > 0 && <RelatedItemGallerySmall items={directors} title={resolveDirectors[locale]} type="personality"></RelatedItemGallerySmall>}
-              {writers && writers.length > 0 && <RelatedItemGallerySmall items={writers} title={resolveWriters[locale]} type="personality"></RelatedItemGallerySmall>}
-              {stars && stars.length > 0 && <RelatedItemGallerySmall items={stars} title={resolveStars[locale]} type="personality"></RelatedItemGallerySmall>}
-            </div>
+          {/*<div className={styles.short}>*/}
+          {/*  {render(content.short)}*/}
+          {/*</div>*/}
+          {/*<div className={styles.synopsis}>*/}
+          {/*  {render(content.synopsis)}*/}
+          {/*</div>*/}
+          {/*<div className={styles.peoplesegment}>*/}
+          {/*  <div className={styles.content}>*/}
+          {/*    {directors && directors.length > 0 && <RelatedItemGallerySmall items={directors} title={resolveDirectors[locale]} type="personality"></RelatedItemGallerySmall>}*/}
+          {/*    {writers && writers.length > 0 && <RelatedItemGallerySmall items={writers} title={resolveWriters[locale]} type="personality"></RelatedItemGallerySmall>}*/}
+          {/*    {stars && stars.length > 0 && <RelatedItemGallerySmall items={stars} title={resolveStars[locale]} type="personality"></RelatedItemGallerySmall>}*/}
+          {/*  </div>*/}
 
-          </div>
+          {/*</div>*/}
 
-          {products && products.length > 0 && <SmallCardList items={products} title={resolveMerchandise[locale]} type="product"></SmallCardList>}
-          {newsitems && newsitems.length > 0 && <SmallCardList items={newsitems} title={resolveNews[locale]} type="newsitem"></SmallCardList>}
+          {/*{products && products.length > 0 && <SmallCardList items={products} title={resolveMerchandise[locale]} type="product"></SmallCardList>}*/}
+          {/*{newsitems && newsitems.length > 0 && <SmallCardList items={newsitems} title={resolveNews[locale]} type="newsitem"></SmallCardList>}*/}
         </div>
       </main>
     </SbEditable>
   )
 }
 
-export default Movie
+export default Group

@@ -5,7 +5,7 @@ import styles from "../styles/MovieList.module.scss"
 import { getAllItems } from "../utils/storyblok"
 import SmallCardList from "./SmallCardList"
 
-const MovieList = ({ data, level, locale }) => {
+const GroupList = ({ data, level, locale }) => {
   if (level === 'data') {
     var content = data.story.content;
   } else {
@@ -15,7 +15,7 @@ const MovieList = ({ data, level, locale }) => {
 
   function updateSortby(sortby){
     setSortby(sortby);
-    getAllItems('movie', locale, sortby).then(
+    getAllItems('group', locale, sortby).then(
       function (result) {
         setItems(result.data.stories);
       });
@@ -23,7 +23,7 @@ const MovieList = ({ data, level, locale }) => {
   
 
   const [items, setItems] = useState([]);
-  getAllItems('movie', locale, sortby).then(
+  getAllItems('group', locale, sortby).then(
     function (result) {
       setItems(result.data.stories);
     });
@@ -44,11 +44,11 @@ const MovieList = ({ data, level, locale }) => {
         </div>
       </div>
       <div>
-        {items && items.length > 0 && <SmallCardList items={items} type="movie"></SmallCardList>}
+        {items && items.length > 0 && <SmallCardList items={items} type="group"></SmallCardList>}
       </div>
     </div>
 
   );
 };
 
-export default MovieList;
+export default GroupList;
